@@ -5,6 +5,11 @@
 
   let kruh = 'O';
   let kriz = 'X';
+  
+	let round = 0;
+	function increment() {
+		round += 1;
+	}
 </script>
 
 <main>
