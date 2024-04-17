@@ -1,2 +1,2 @@
-# pishquarks-Noughts-and-crosses-
+# pishquarks-Noughts-and-crosses
 Noughts and crosses
