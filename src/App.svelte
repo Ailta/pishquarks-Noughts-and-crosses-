@@ -22,7 +22,7 @@
 	let playerTwoWins = 0;
 	
 	function play(id) {
-		if (tile[id] != ''){
+		if (tile[id] == ''){
 			if (round%2 == 0){
 				tile[id] = playerOne;
 			} else {
