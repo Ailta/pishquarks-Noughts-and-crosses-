@@ -4,6 +4,8 @@
   import Counter from './lib/Counter.svelte'
 	
 	let tile = ['', '', '', '', '', '', '', '', ''];
+	let plus = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+	let krizek = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 	
 	let round = 0;
 	function increment() {
@@ -29,77 +31,47 @@
 			increment();
 		}
 		
-		let count = [0, 0, 0, 0, 0, 0];
-		for (let i = 0; i < 3; i++){
-			/* (tile[0 + i] == '|' && tile[3 + i] == '|' && tile[6 + i] == '|'){
-				console.log('babum');
-			}*/
-			
-			
-			// For x
-			let x = i;
-			if (tile[x] == '×'){
-				count[0] -= -1;
+		for (let i = 0; i<9; i++){
+			if (tile[i] == playerOne){
+				krizek[i] = 1;
 			}
-			if (tile[3+x] == '×'){
-				count[1] -= -1;
-			}
-			if (tile[6+x] == '×'){
-				count[2] -= -1;
-			}
-			
-			// For +
-			if (tile[x] == '+'){
-				count[3] -= -1;
-			}
-			if (tile[3+x] == '+'){
-				count[4] -= -1;
-				console.log(0);
-			}
-			if (tile[6+x] == '+'){
-				count[5] -= -1;
-			}
-			
-			// For x
-			let y = x*3;
-			if (tile[y] == '×'){
-				count[0] -= -1;
-			}
-			if (tile[1+y] == '×'){
-				count[1] -= -1;
-			}
-			if (tile[2+y] == '×'){
-				count[2] -= -1;
-			}
-			
-			// For +
-			if (tile[y] == '+'){
-				count[3] -= -1;
-			}
-			if (tile[1+y] == '+'){
-				count[4] -= -1;
-				console.log(1);
-			}
-			if (tile[2+y] == '+'){
-				count[5] -= -1;
+			if (tile[i] == playerTwo){
+				plus[i] = 1;
 			}
 		}
-		
-		if (count[0] == 2 && count[1] == 2 && count[2] == 2 ||
-			count[0] == 2 && count[1] == 2 && count[2] == 4 ||
-			count[0] == 3 && count[1] == 2 && count[2] == 3 ||
-			count[0] == 4 && count[1] == 2 && count[2] == 2){
-			console.log('bumba');
+		if(plus[0] == 1 && plus[1] == 1 && plus[2] == 1){
+			console.log("Vyhrál Plusák");
+			playerOneWins += 1;
 		}
-		
-		if (count[3] == 4 && count[4] == 1 && count[5] == 1 ||
-			count[3] == 1 && count[4] == 4 && count[5] == 1 ||
-			count[3] == 1 && count[4] == 1 && count[5] == 4){
-			console.log('babum');
+		if(plus[3] == 1 && plus[4] == 1 && plus[5] == 1){
+			console.log("Vyhrál Plusák");
+			playerOneWins += 1;
 		}
-		
-		console.log(count);
-		
+		if(plus[6] == 1 && plus[7] == 1 && plus[8] == 1){
+			console.log("Vyhrál Plusák");
+			playerOneWins += 1;
+		}
+		if(plus[0] == 1 && plus[3] == 1 && plus[6] == 1){
+			console.log("Vyhrál Plusák");
+			playerOneWins += 1;
+		}
+		if(plus[1] == 1 && plus[4] == 1 && plus[7] == 1){
+			console.log("Vyhrál Plusák");
+			playerOneWins += 1;
+		}
+		if(plus[2] == 1 && plus[5] == 1 && plus[8] == 1){
+			console.log("Vyhrál Plusák");
+			playerOneWins += 1;
+		}
+
+		if(krizek[0] == 1 && krizek[4] == 1 && krizek[8] == 1){
+			console.log("Vyhrál Křížník");
+			playerTwoWins += 1;
+		}
+		if(krizek[2] == 1 && krizek[4] == 1 && krizek[6] == 1){
+			console.log("Vyhrál Křížník");
+			playerTwoWins += 1;
+		}
 	}
 	
 </script>
