@@ -14,6 +14,7 @@
 	function clearTable() {
 		tile = ['', '', '', '', '', '', '', '', ''];
 		plus = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+		krizek = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 	}
 	
 	let playerOne = '×';
@@ -99,6 +100,8 @@
 <button type="button" on:click={() => clearTable()}>Clear Table</button>
 <p>{playerOne} has won: {playerOneWins} times</p>
 <p>{playerTwo} has won: {playerTwoWins} times</p>
+<p>Player {playerOne}, can only win in diagonal.</p>
+<p>Player {playerTwo}, can only win in horizontal and vertical.</p>
 </main>
 
 <style>
