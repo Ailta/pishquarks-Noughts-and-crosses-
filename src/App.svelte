@@ -9,6 +9,9 @@
 	function increment() {
 		round += 1;
 	}
+	function clearTable() {
+		tile = ['', '', '', '', '', '', '', '', ''];
+	}
 	
 	function play(id) {
 		console.log(id);
@@ -114,6 +117,7 @@
     <td><button type="button" on:click={() => play(8)}>{tile[8]}</button></td>
   </tr>
 </table>
+<button type="button" on:click={() => clearTable()}>Clear Table</button>
 </main>
 
 <style>
