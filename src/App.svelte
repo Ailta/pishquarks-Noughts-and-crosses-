@@ -21,9 +21,9 @@
 	function play(id) {
 		console.log(id);
 		if (round%2 == 0){
-			tile[id] = '×';
+			tile[id] = playerOne;
 		} else {
-			tile[id] = '+';
+			tile[id] = playerTwo;
 		}
 		increment();
 		
