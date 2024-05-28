@@ -11,6 +11,7 @@
 	}
 	function clearTable() {
 		tile = ['', '', '', '', '', '', '', '', ''];
+		plus = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 	}
 	
 	let playerOne = '×';
