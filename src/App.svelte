@@ -13,6 +13,11 @@
 		tile = ['', '', '', '', '', '', '', '', ''];
 	}
 	
+	let playerOne = '×';
+	let playerTwo = '+';
+	let playerOneWins = 0;
+	let playerTwoWins = 0;
+	
 	function play(id) {
 		console.log(id);
 		if (round%2 == 0){
@@ -118,6 +123,8 @@
   </tr>
 </table>
 <button type="button" on:click={() => clearTable()}>Clear Table</button>
+<p>{playerOne} has won: {playerOneWins} times</p>
+<p>{playerTwo} has won: {playerTwoWins} times</p>
 </main>
 
 <style>
