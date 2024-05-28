@@ -19,13 +19,14 @@
 	let playerTwoWins = 0;
 	
 	function play(id) {
-		console.log(id);
-		if (round%2 == 0){
-			tile[id] = playerOne;
-		} else {
-			tile[id] = playerTwo;
+		if (tile[id] != ''){
+			if (round%2 == 0){
+				tile[id] = playerOne;
+			} else {
+				tile[id] = playerTwo;
+			}
+			increment();
 		}
-		increment();
 		
 		let count = [0, 0, 0, 0, 0, 0];
 		for (let i = 0; i < 3; i++){
